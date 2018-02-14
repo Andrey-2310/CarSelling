@@ -1,0 +1,28 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>DESCRIPTION</th>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.name}"></td>
+        <td th:text="${car.price}"></td>
+        <td th:text="${car.description}"></td>
+        <td>
+            <form method="POST" th:action="@{/cars/delete(id=${car.id})}">
+                <button type="submit" name="submit" value="value" class="link-button">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<form  th:action="@{/cars/create}">
+    <button type="submit" name="submit" value="value" class="link-button">Create New</button>
+</form>
+</body>
+</html>

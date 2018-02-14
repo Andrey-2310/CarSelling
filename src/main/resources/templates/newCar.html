@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>New Car</title>
+</head>
+<body>
+<form th:action="@{/cars/create}" th:object="${newCar}" method="post">
+    <div><label> Name: <input type="text" th:field="*{name}"/> </label></div>
+    <div><label> Price: <input type="password" th:field="*{price}"/> </label></div>
+    <div><label> Description: <input type="password" th:field="*{description}"/> </label></div>
+    <div><input type="submit" value="Create"/></div>
+</form>
+</body>
+</html>
